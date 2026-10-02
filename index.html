@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Анкета предзаписи на новый поток программы «Метод Бачинской»">
+<title>Анкета предзаписи Метод Бачинской</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Одна узкая колонка: вступление, шесть вопросов карточками, согласия, кнопка. Палитра и шрифты сайта Серафимы. */
+:root{
+  --bg:#F5F1FA; --card:#FFFFFF; --plum:#3F3170; --accent:#7A66B3; --ink:#2B2735;
+  --muted:#6A6478; --line:#DDD5EC; --soft:#EBE4F6; --on-plum:#FFFFFF; --err:#B3394F; --hl:#E0D4F5;
+  --display:"Lora",Georgia,"Times New Roman",serif;
+  --body:"Montserrat","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1726; --card:#262034; --plum:#CDBFF2; --accent:#A794DC; --ink:#EFEAF8;
+    --muted:#A9A1BC; --line:#3D3552; --soft:#30283F; --on-plum:#1B1726; --err:#F08A9C; --hl:#4A3D68;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1726; --card:#262034; --plum:#CDBFF2; --accent:#A794DC; --ink:#EFEAF8;
+  --muted:#A9A1BC; --line:#3D3552; --soft:#30283F; --on-plum:#1B1726; --err:#F08A9C; --hl:#4A3D68;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;margin:0}
+.wrap{max-width:600px;margin:0 auto;padding-inline:20px;padding-block:44px 64px;display:flex;flex-direction:column;gap:40px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(30px,7vw,42px);line-height:1.15;color:var(--plum);margin:0;text-wrap:balance}
+h1 em{font-style:italic;font-weight:500}
+.lead{margin:0;font-size:18px}
+.meta{margin:0;color:var(--muted);font-size:15px}
+.gift{background:var(--soft);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.gift p{margin:0;font-family:var(--display);font-weight:500;font-size:19px;color:var(--plum)}
+.gift ul{margin:0;padding-left:20px}
+.intro{display:flex;flex-direction:column;gap:14px}
+form{display:flex;flex-direction:column;gap:34px}
+.q{border:0;padding:0;display:flex;flex-direction:column;gap:10px;margin:0;min-width:0}
+.hl{background:linear-gradient(transparent 55%,var(--hl) 55%);font-weight:500}
+.q em{font-style:italic;color:var(--accent)}
+.q.bad legend{color:var(--err)}
+.q legend,.q label.t{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.35;color:var(--plum);padding:0}
+fieldset.q legend{float:left;width:100%;margin-bottom:12px}
+fieldset.q legend + *{clear:both}
+.hint{margin:0;color:var(--muted);font-size:15px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+textarea{min-height:104px;resize:vertical}
+input[type=text]:focus-visible,textarea:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--soft)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;background:var(--card)}
+.opt:has(input:checked){border-color:var(--accent);background:var(--soft)}
+.opt:has(input:focus-visible){box-shadow:0 0 0 3px var(--soft);border-color:var(--accent)}
+.opt input,.check input{accent-color:var(--accent);width:20px;height:20px;margin:3px 0 0;flex:none}
+.consents{display:flex;flex-direction:column;gap:12px;padding-inline:4px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:15px;cursor:pointer}
+a{color:var(--accent);text-underline-offset:3px}
+.err{margin:0;color:var(--err);font-size:15px;font-weight:500}
+.bad{border-color:var(--err)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+button.send{font:inherit;font-weight:600;font-size:18px;color:var(--on-plum);background:var(--plum);border:0;border-radius:999px;padding:16px 22px;cursor:pointer}
+button.send:hover{background:var(--accent)}
+button.send:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+button.send:disabled{opacity:.6;cursor:default}
+.done{background:var(--card);border-radius:18px;padding:28px 22px;display:flex;flex-direction:column;gap:14px}
+.done h2{font-family:var(--display);font-weight:500;font-size:28px;line-height:1.2;color:var(--plum);margin:0}
+.done p{margin:0}
+.btn{display:inline-block;align-self:flex-start;font-weight:600;color:var(--on-plum);background:var(--plum);border-radius:12px;padding:13px 20px;text-decoration:none}
+.note{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:15px}
+footer{color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:8px}
+footer p{margin:0}
+footer .docs{display:flex;flex-wrap:wrap;gap:6px 16px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="intro">
+    <p class="eyebrow">Серафима Бачинская</p>
+    <h1>Анкета предзаписи на <em>«Метод Бачинской»</em></h1>
+    <p class="lead">Заполните анкету, и вы <span class="hl">первой получите программу и условия</span> нового потока. Присоединиться можно будет <span class="hl">на самых приятных условиях</span>, раньше, чем откроется общий набор.</p>
+    <p class="lead">Заполнение анкеты вас <span class="hl">ни к чему не обязывает</span>.</p>
+    <p class="meta">6 вопросов, около трех минут. Ответы увидит только команда Серафимы.</p>
+    <div class="gift">
+      <p>В подарок за заполнение анкеты</p>
+      <ul>
+        <li>разбор следующего года от Серафимы</li>
+        <li>рекомендации, как к нему подготовиться</li>
+        <li>закрытый эфир «вопрос-ответ»</li>
+      </ul>
+    </div>
+  </header>
+
+  <form id="anketa" novalidate>
+    <div class="q">
+      <label class="t" for="name">Как вас зовут?</label>
+      <input type="text" id="name" name="name" autocomplete="given-name" required>
+    </div>
+
+    <div class="q">
+      <label class="t" for="contact">Ваш ник в Телеграме или номер телефона, где сможем с вами общаться</label>
+      <input type="text" id="contact" name="contact" placeholder="@nik или +7..." required>
+    </div>
+
+    <div class="q">
+      <label class="t" for="change">Что сейчас больше всего <em>хочется изменить</em> в своей жизни или состоянии?</label>
+      <p class="hint">Пишите как есть, своими словами.</p>
+      <textarea id="change" name="change" required></textarea>
+    </div>
+
+    <div class="q">
+      <label class="t" for="result">Представьте, что программа закончилась и все получилось. Что у вас <em>стало по-другому</em>?</label>
+      <textarea id="result" name="result" required></textarea>
+    </div>
+
+    <fieldset class="q" id="q-format">
+      <legend>Какой <em>формат</em> вам ближе?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" id="format-1" name="format" value="Самостоятельно, в своем темпе" required><span>Идти самостоятельно, в своем темпе</span></label>
+        <label class="opt"><input type="radio" id="format-2" name="format" value="В группе с личным разбором"><span>В группе, с личным разбором от Серафимы</span></label>
+        <label class="opt"><input type="radio" id="format-3" name="format" value="Индивидуально"><span>Индивидуальная работа с Серафимой</span></label>
+        <label class="opt"><input type="radio" id="format-4" name="format" value="Пока не знаю"><span>Пока не знаю, хочу сначала посмотреть условия</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="q" id="q-ready">
+      <legend>Насколько вы <em>готовы присоединиться</em> к ближайшему потоку?</legend>
+      <div class="opts">
+        <label class="opt"><input type="radio" id="ready-1" name="ready" value="Точно хочу, жду условий" required><span>Точно хочу, жду условий</span></label>
+        <label class="opt"><input type="radio" id="ready-2" name="ready" value="Хочу, но есть сомнения"><span>Хочу, но есть сомнения</span></label>
+        <label class="opt"><input type="radio" id="ready-3" name="ready" value="Пока присматриваюсь"><span>Пока присматриваюсь</span></label>
+      </div>
+    </fieldset>
+
+    <div class="hp" aria-hidden="true"><label for="site">Не заполняйте это поле</label><input type="text" id="site" name="site" tabindex="-1" autocomplete="off"></div>
+
+    <div class="consents">
+      <label class="check"><input type="checkbox" id="consent-pd" name="consent_pd" required><span>Я даю <a href="https://disk.yandex.ru/i/Q3lnXeykiKFxhw" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаю <a href="https://disk.yandex.ru/i/4KvI_Y5jIBCUGA" target="_blank" rel="noopener">политику обработки персональных данных</a></span></label>
+      <label class="check"><input type="checkbox" id="consent-mail" name="consent_mail"><span>Я даю <a href="https://disk.yandex.ru/i/Ug_7apJsNRkXhQ" target="_blank" rel="noopener">согласие на получение рассылки</a> о программах и новостях Серафимы</span></label>
+    </div>
+
+    <p class="err" id="form-err" role="alert" hidden></p>
+    <button class="send" type="submit" id="send">Отправить анкету</button>
+  </form>
+
+  <section class="done" id="done" hidden tabindex="-1">
+    <h2>Спасибо, мы получили вашу анкету</h2>
+    <p>Вы в списке предзаписи. Мы напишем вам в числе первых, чтобы рассказать про программу и лучшие условия.</p>
+    <p>Подарки ждут вас в закрытом канале: там будут разбор следующего года, рекомендации, как к нему подготовиться, и эфир «вопрос-ответ».</p>
+    <a class="btn" href="https://t.me/+KeOa7U4jPbA3Mjky" target="_blank" rel="noopener">Забрать подарки</a>
+    <p class="note" id="demo-note" hidden>Черновик: отправка ответов еще не подключена, эта анкета никуда не ушла.</p>
+  </section>
+
+  <footer>
+    <p>Остался вопрос? Напишите нам в Телеграм: <a href="https://t.me/zabota_Serafima_Bachinskaay" target="_blank" rel="noopener">@zabota_Serafima_Bachinskaay</a></p>
+    <p class="docs">
+      <a href="https://disk.yandex.ru/i/4KvI_Y5jIBCUGA" target="_blank" rel="noopener">Политика обработки ПДн</a>
+      <a href="https://disk.yandex.ru/i/Q3lnXeykiKFxhw" target="_blank" rel="noopener">Согласие на обработку ПДн</a>
+      <a href="https://disk.yandex.ru/i/Ug_7apJsNRkXhQ" target="_blank" rel="noopener">Согласие на рассылку</a>
+    </p>
+  </footer>
+</div>
+
+<script>
+// Сюда вставить адрес веб-приложения Google Apps Script (заканчивается на /exec).
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbzgmvoyPHef0gX_YkWH6zrx7UGfuSuNdMogZ4CD7xrrvJXsj17Xc8QNtRiuIAHbvY4/exec";
+
+(function(){
+  var form = document.getElementById('anketa');
+  var err = document.getElementById('form-err');
+  var btn = document.getElementById('send');
+  var done = document.getElementById('done');
+  var KEY = 'anketa-predzapis-draft';
+  var textIds = ['name','contact','change','result'];
+
+  try{
+    var saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    textIds.forEach(function(id){ if(saved[id]) document.getElementById(id).value = saved[id]; });
+  }catch(e){}
+  form.addEventListener('input', function(){
+    try{
+      var d = {}; textIds.forEach(function(id){ d[id] = document.getElementById(id).value; });
+      localStorage.setItem(KEY, JSON.stringify(d));
+    }catch(e){}
+  });
+
+  function picked(name){ var el = form.querySelector('input[name="'+name+'"]:checked'); return el ? el.value : ''; }
+  function mark(el, bad){ el.classList.toggle('bad', bad); }
+
+  function validate(){
+    var first = null, msg = '';
+    textIds.forEach(function(id){
+      var el = document.getElementById(id), bad = !el.value.trim();
+      mark(el, bad); if(bad && !first) first = el;
+    });
+    [['format','q-format'],['ready','q-ready']].forEach(function(p){
+      var box = document.getElementById(p[1]), bad = !picked(p[0]);
+      mark(box, bad); if(bad && !first) first = box.querySelector('input');
+    });
+    if(first) msg = 'Пожалуйста, ответьте на все вопросы, без этого анкета не отправится.';
+    var c = document.getElementById('consent-pd');
+    if(!first && !c.checked){ first = c; msg = 'Чтобы отправить анкету, отметьте согласие на обработку персональных данных.'; }
+    err.textContent = msg; err.hidden = !msg;
+    if(first){ first.focus(); if(first.scrollIntoView) first.scrollIntoView({block:'center'}); }
+    return !first;
+  }
+
+  function finish(demo){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    form.hidden = true; done.hidden = false;
+    document.getElementById('demo-note').hidden = !demo;
+    done.focus(); if(done.scrollIntoView) done.scrollIntoView({block:'start'});
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(document.getElementById('site').value) return;
+    if(!validate()) return;
+    var data = {
+      date: new Date().toISOString(),
+      name: document.getElementById('name').value.trim(),
+      contact: document.getElementById('contact').value.trim(),
+      change: document.getElementById('change').value.trim(),
+      result: document.getElementById('result').value.trim(),
+      format: picked('format'),
+      ready: picked('ready'),
+      consent_pd: 'да',
+      consent_mail: document.getElementById('consent-mail').checked ? 'да' : 'нет',
+      source: (location.search || '').slice(0, 300)
+    };
+    if(!ENDPOINT){ finish(true); return; }
+    btn.disabled = true; btn.textContent = 'Отправляем...';
+    fetch(ENDPOINT, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(data)})
+      .then(function(){ finish(false); })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'Отправить анкету';
+        err.textContent = 'Не получилось отправить анкету. Проверьте интернет и нажмите кнопку еще раз. Ваши ответы сохранены на этой странице.';
+        err.hidden = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>
